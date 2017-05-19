@@ -1,0 +1,14 @@
+<h4>Contributors in: {{repository}}</h4>
+<h4>Issues: {{openIssues}}</h4>
+<a href="#/user/{{username}}">Back to home</a>
+<ul>
+    <li ng-repeat="colla in getCollaborator">
+        <ul style="list-style-type: none;">
+            <li>
+                <img ng-src="{{colla.avatar_url}}" title="{{colla.avatar_url}}" alt="{{colla.login}}" height="50">
+            </li>
+            <li>{{colla.login}}</li>
+            <li>{{colla.contributions}}</li>
+        </ul>
+    </li>
+</ul>

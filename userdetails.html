@@ -1,0 +1,25 @@
+
+<p>{{username}}</p>
+<div>
+    <p>{{user.name}}</p>
+    <p>{{error}}</p>
+    <img ng-src="{{user.avatar_url}}" title="{{user.name}}" height="50" alt="No image display" />
+    <p>Order by:
+        <select ng-model="repoOrderBy">
+            <option value="-full_name">Full name</option>
+            <option value="+language">Language</option>
+            <option value="-stargazers_count">Stargazers</option>
+        </select>
+    </p>
+    <a href="#/main">Back to search</a>
+    <ul ng-repeat="repo in repos | orderBy:repoOrderBy">
+        <li>
+            <ul>
+                <li ng-click="repoName(repo.full_name, repo.open_issues)" style="cursor: pointer;">Name: {{repo.full_name}}</li>
+                <li>Language: {{repo.language}}</li>
+                <li>Star: {{repo.stargazers_count | number}}</li>
+                <li>Open: {{repo.open_issues}}</li>
+            </ul>
+        </li>
+    </ul>
+</div>
